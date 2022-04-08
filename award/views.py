@@ -26,3 +26,6 @@ def index(request):
         posts = None
     return render(request, 'index.html', {'posts': posts, 'form': form, 'random_post': random_post})
 
+@login_required(login_url='login')
+def profile(request, username):
+    return render(request, 'profile.html')
