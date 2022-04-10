@@ -2,14 +2,7 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-<div class="container" style=" color:white;
-border: 3px solid green;
-border-radius: 50%;
-height:90px;
-width:90px;
-padding-left:20px;
-padding-top:20px;
-margin-right:20px;">
+<div class="container" >
     <h5 class="mb-4 mt-4">{{ post.title }} by {{ post.user.username }} from {{ post.user.profile.location }} <span
             id="heart"> <i class="fas fa-heart"></i></span></h5>
 
