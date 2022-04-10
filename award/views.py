@@ -44,7 +44,7 @@ class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
-
+@login_required(login_url='login')
 def signup(request):
     if request.method == 'POST':
         form = SignupForm(request.POST)
@@ -57,7 +57,7 @@ def signup(request):
             return redirect('index')
     else:
         form = SignupForm()
-    return render(request, 'registration/signup.html', {'form': form})
+    return render(request, 'templates/registration/signup.html', {'form': form})
 
 @login_required(login_url='login')
 def profile(request, username):
