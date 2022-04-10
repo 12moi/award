@@ -6,7 +6,8 @@
     <div class="row">
         {% if results %}
         <h5>Found {{results.count}} projects</h5>
-        <div class="templates display">
+        <div class="templates display" style=" display: flex;
+        flex-wrap: wrap;">
 
             {% for post in results %}
             <div class="col-md-4 mb-4">

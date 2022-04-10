@@ -2,6 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import SignupForm, PostForm, UpdateUserForm, UpdateUserProfileForm, RatingsForm
 from rest_framework import viewsets
+
 from .models import Profile, Post, Rating
 from .serializers import ProfileSerializer, UserSerializer, PostSerializer
 from django.contrib.auth import login, authenticate
@@ -44,7 +45,7 @@ class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
-@login_required(login_url='login')
+
 def signup(request):
     if request.method == 'POST':
         form = SignupForm(request.POST)
@@ -57,7 +58,7 @@ def signup(request):
             return redirect('index')
     else:
         form = SignupForm()
-    return render(request, 'templates/registration/signup.html', {'form': form})
+    return render(request, 'registration/signup.html', {'form': form})
 
 @login_required(login_url='login')
 def profile(request, username):
