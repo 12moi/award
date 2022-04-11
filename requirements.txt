@@ -6,6 +6,7 @@ Django==3.2.10
 django-bootstrap-v5==1.0.11
 django-crispy-forms==1.14.0
 djangorestframework==3.13.1
+djangorestframework-jwt==1.11.0
 psycopg2==2.9.3
 PyJWT==1.7.1
 pytz==2022.1
