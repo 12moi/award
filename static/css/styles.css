@@ -59,6 +59,7 @@ body{
     font-size:12px;
 }
 .overlay{
+    background-image: url('/media/images/Rectangle\ 2.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

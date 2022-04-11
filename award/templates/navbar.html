@@ -24,7 +24,7 @@ color:white;">
                 {% if user.is_authenticated%}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                       aria-haspopup="false"
+                       aria-haspopup="true"
                        aria-expanded="false">{{ user.username|title }} <img class="rounded-circle nav-img"
                                                                             src="{{ user.profile.profile_picture.url }}"
                                                                             alt="">
@@ -36,12 +36,13 @@ color:white;">
                         <hr>
                         <a href="{% url 'logout' %}" class="text-secondary text-center dropdown-item">Log Out</a>
 
+
                     </div>
                 </li>
                 {% else %}
                 <a href="{% url 'login' %}" class="login btn btn-sm btn-info"> REGISTER/LOGIN </a>
                 {% endif %}
-                <button class="btn btn-info btn-sm" id="site" style="text-decoration: none;" data-toggle="modal" data-target=".bd-example-modal-xl">
+                <button class="btn btn-info btn-sm" id="site" data-toggle="modal" data-target=".bd-example-modal-xl">
                     Submit your site
                 </button>
             </ul>
